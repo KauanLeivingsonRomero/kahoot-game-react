@@ -1,0 +1,43 @@
+import { useContext, useEffect } from 'react';
+import './style.css'
+import { GameContext } from '../../../../../contexts/gameContext';
+import { questions } from '../../questions';
+
+const QuestionTimer = () => {  
+
+  const {time, setTime, currentQuestionIndex, setHandleResults, handleResults, setHandleGame, setCurrentQuestionIndex} = useContext(GameContext)
+
+  useEffect(() => {
+    if (time === 0 && currentQuestionIndex + 1 < questions.length) {
+      setHandleGame(false)
+      setHandleResults(true)
+
+      setTimeout(() => {
+        const nextTimerIndex = (currentQuestionIndex + 1) % questions.length;
+        setCurrentQuestionIndex(nextTimerIndex);
+        setTime(questions[nextTimerIndex].timer); 
+        setHandleGame(true)
+        setHandleResults(false)
+      }, 2000)
+    }
+    if(time === 0 && questions.length -1){
+      setHandleGame(false)
+      setHandleResults(true)
+    }
+  }, [currentQuestionIndex, handleResults, setCurrentQuestionIndex, setHandleGame, setHandleResults, setTime, time]);
+
+  useEffect(() => {
+    const timerId = setInterval(() => {
+      setTime((prevTime) => (prevTime > 0 ? prevTime - 1 : prevTime));
+    }, 1000);
+    return () => clearInterval(timerId);
+  }, [currentQuestionIndex, setTime]);
+
+  return(
+    <div className='circle'>
+      <h1>{time}</h1>
+    </div>
+  );
+}
+
+export default QuestionTimer;
