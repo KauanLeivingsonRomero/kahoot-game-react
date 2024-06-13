@@ -1,0 +1,34 @@
+:root {
+    --purple : #9E0CAB;
+    --gray : #AAAAAA;
+    --blue : #06ADEF;
+    --inputBg : #252525;
+    --inputBorder : #707070;
+    --green : #3BAC4E;
+    --yellow : #FEED35;
+    --default : #252525;
+    --red : #D31256;
+    --cardBg : #2F2F2F;
+}
+
+.text-purple { color: var(--purple) !important; }
+.text-gray { color: var(--gray) !important; }
+.text-blue { color: var(--blue) !important; }
+.text-inputBg { color: var(--inputBg) !important; }
+.text-inputBorder { color: var(--inputBorder) !important; }
+.text-green { color: var(--green) !important; }
+.text-yellow { color: var(--yellow) !important; }
+.text-default { color: var(--default) !important; }
+.text-red { color: var(--red) !important; }
+.text-cardBg { color: var(--cardBg) !important; }
+
+.bg-gray { background-color: var(--gray) !important; }
+.bg-blue { background-color: var(--blue) !important; }
+.bg-inputBg { background-color: var(--inputBg) !important; }
+.bg-inputBorder { background-color: var(--inputBorder) !important; }
+.bg-green { background-color: var(--green) !important; }
+.bg-yellow { background-color: var(--yellow) !important; }
+.bg-default { background-color: var(--default) !important; }
+.bg-red { background-color: var(--red) !important; }
+.bg-cardBg { background-color: var(--cardBg) !important; }
+.bg-purple { background-color: var(--purple) !important; }

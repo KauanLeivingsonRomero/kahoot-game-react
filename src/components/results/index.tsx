@@ -25,39 +25,21 @@ const Results = () => {
         <div className='container-fluid p-0 results'>
           <h1 className='title'>{questions[currentQuestionIndex].question}</h1>
           <div className='container-pillars'>
-          <div className='pillars-center'>
-            {questions[currentQuestionIndex].options.map((option, index) => {
-              
-                const isCorrect = option.value === questions[currentQuestionIndex].answer;
-                const points = getPointsForOption(option.color);
+            <div className='pillars-center'>
+              {questions[currentQuestionIndex].options.map((option, index) => {
+                
+                  const isCorrect = option.value === questions[currentQuestionIndex].answer;
+                  const points = getPointsForOption(option.color);
 
-                return (
-                  <div className='pillar-map' key={index}>
-                    {isCorrect && <span className="correct-mark icon">✔</span>}
-                    <h1 className='pillar-text'>{points}</h1>
-                    <div className='pillar' style={{backgroundColor: option.color}}></div>
-                  </div>
-                );
-              })}
-          </div>
-
-
-            {/* <div>
-              <h1 className='pillar-text'>10</h1>
-              <div className='pillar' style={{backgroundColor: COLORS.$red}}></div>
+                  return (
+                    <div className='pillar-map' key={index}>
+                      {isCorrect && <span className="correct-mark icon">✔</span>}
+                      <h1 className='pillar-text'>{points}</h1>
+                      <div className='pillar' style={{backgroundColor: option.color}}></div>
+                    </div>
+                  );
+                })}
             </div>
-            <div>
-              <h1 className='pillar-text'>10</h1>
-              <div className='pillar' style={{backgroundColor: COLORS.$blue}}></div>
-            </div>
-            <div>
-              <h1 className='pillar-text'>10</h1>
-              <div className='pillar' style={{backgroundColor: COLORS.$yellow}}></div>
-            </div>
-            <div>
-              <h1 className='pillar-text'>10</h1>
-              <div className='pillar' style={{backgroundColor: COLORS.$green}}></div>
-            </div> */}
           </div>
         </div>
       }

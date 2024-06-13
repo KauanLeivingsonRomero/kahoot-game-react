@@ -11,4 +11,7 @@ export const COLORS = {
   $yellowActive: "#d8bc41",
   $green: "#68c334",
   $greenActive: "#5aa92d",
+  $bronze: "#986634",
+  $silver: "#c0c0c0",
+  $gold: "#ffd700"
 }

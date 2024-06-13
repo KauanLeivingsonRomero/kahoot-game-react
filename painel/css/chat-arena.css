@@ -1,0 +1,53 @@
+@media screen and (max-width: 350px) {
+    .arena-chat { height: 21.8rem !important; width: 100% !important; overflow-x: hidden !important; } 
+    .chat-embed .chat-room--main .live-chat-room { min-height: 100% !important; overflow-x: hidden !important; }
+    .tCQnd .react-emoji-picker--wrapper { overflow-x: hidden !important; }
+    .tCQnd .emoji-mart { max-width: 298px !important; overflow-x: hidden !important; }
+    .react-emoji-picker--wrapper { height: 160px !important; overflow-x: hidden !important; }
+}
+
+@media screen and (min-width: 351px) and (max-width: 767px) {
+    .arena-chat { height: 21.8rem !important; width: 100% !important; overflow-x: hidden !important; } 
+    .chat-embed .chat-room--main .live-chat-room { min-height: 100% !important; overflow-x: hidden !important; }
+    .tCQnd .react-emoji-picker--wrapper { overflow-x: hidden !important; }
+    .tCQnd .emoji-mart { max-width: 298px !important; overflow-x: hidden !important; }
+    .react-emoji-picker--wrapper { height: 160px !important; overflow-x: hidden !important; }
+}
+
+@media screen and (min-width: 768px) {
+    .arena-chat { height: 21.8rem !important; width: 100% !important; overflow-x: hidden !important; } 
+    .chat-embed .chat-room--main .live-chat-room { min-height: 100% !important; overflow-x: hidden !important; }
+    .tCQnd .react-emoji-picker--wrapper { overflow-x: hidden !important; }
+    .tCQnd .emoji-mart { max-width: 298px !important; overflow-x: hidden !important; }
+    .react-emoji-picker--wrapper { height: 160px !important; overflow-x: hidden !important; }
+}
+
+@media screen and (min-width: 992px) {
+    .arena-chat { height: 21.8rem !important; width: 100% !important; } 
+    .chat-embed .chat-room--main .live-chat-room { min-height: 100% !important; height: ; overflow-x: hidden !important; }
+    .tCQnd .react-emoji-picker--wrapper { left: -2.6rem !important; overflow-x: hidden !important; }
+    .tCQnd .emoji-mart { max-width: 298px !important; overflow-x: hidden !important; }
+    .react-emoji-picker--wrapper { height: 250px !important; overflow-x: hidden !important; }
+}
+
+@media screen and (min-width: 1200px) {
+    .arena-chat { height: 26rem !important; width: 100% !important; } 
+}
+
+@media screen and (min-width: 1360px) {
+    .arena-chat { height: 26rem !important; width: 100% !important; } 
+}
+
+@media screen and (min-width: 1400px) {
+
+    .arena-chat { height: 30.2rem !important; width: 100% !important; } 
+}
+
+@media screen and (min-width: 1600px) {
+    .arena-chat { height: 30.2rem !important; width: 100% !important; } 
+}
+
+@media screen and (min-width: 1920px) {
+    .arena-chat { height: 30.2rem !important; width: 100% !important; } 
+}
+
