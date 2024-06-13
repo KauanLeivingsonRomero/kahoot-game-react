@@ -7,7 +7,7 @@ import { PointsContext } from '../../../../../contexts/points';
 const QuestionTimer = () => {  
 
   const {time, setTime, currentQuestionIndex, setHandleResults, handleResults, setHandleGame, setCurrentQuestionIndex} = useContext(GameContext)
-  const {reset, setIsAnswered} = useContext(PointsContext)
+  const {reset, setIsAnswered, setHandleScoreboard} = useContext(PointsContext)
 
   useEffect(() => {
     if (time === 0 && currentQuestionIndex + 1 < questions.length) {
@@ -24,11 +24,15 @@ const QuestionTimer = () => {
         reset()
       }, 2000)
     }
-    if(time === 0 && questions.length -1){
+    if(time === 0 && currentQuestionIndex == questions.length - 1){
       setHandleGame(false)
       setHandleResults(true)
+      setTimeout(() => {
+        setHandleResults(false)
+        setHandleScoreboard(true)
+      }, 3000)
     }
-  }, [currentQuestionIndex, handleResults, setCurrentQuestionIndex, setHandleGame, setHandleResults, setTime, time]);
+  }, [currentQuestionIndex, handleResults, setCurrentQuestionIndex, setHandleGame, setHandleResults, setTime, time, reset, setIsAnswered]);
 
   useEffect(() => {
     const timerId = setInterval(() => {

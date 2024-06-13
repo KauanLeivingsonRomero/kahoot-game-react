@@ -15,6 +15,8 @@ export interface PointsContextProps{
   setIsAnswered: Dispatch<SetStateAction<boolean>>
   selectedColor: string
   setSelectedColor: Dispatch<SetStateAction<string>>
+  handleScoreboard: boolean
+  setHandleScoreboard: Dispatch<SetStateAction<boolean>>
   reset: () => void
 }
 

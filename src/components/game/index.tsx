@@ -6,10 +6,11 @@ import Results from '../results';
 import "./styles.css"
 import { PointsContext } from '../../../contexts/points';
 import { COLORS } from '../../colors';
+import Scoreboard from '../scoreboard';
 
 const Game = () => {
   const { handleGame, currentQuestionIndex, handleResults } = useContext(GameContext);
-  const { setRedPoints, redPoints, setBluePoints, bluePoints, setYellowPoints, yellowPoints, setGreenPoints, greenPoints, totalPoints, setTotalPoints, setIsAnswered, setSelectedColor} = useContext(PointsContext);
+  const { setRedPoints, redPoints, setBluePoints, bluePoints, setYellowPoints, yellowPoints, setGreenPoints, greenPoints, totalPoints, setTotalPoints, setIsAnswered, setSelectedColor, handleScoreboard} = useContext(PointsContext);
 
   const handleAnswer = (answer: string, color: string) => {
 
@@ -59,6 +60,9 @@ const Game = () => {
       }      
       {handleResults &&
         <Results />
+      }
+      {handleScoreboard &&
+        <Scoreboard/>
       }
     </>
   );
