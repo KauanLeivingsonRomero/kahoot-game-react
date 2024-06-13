@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 import { UserAgentProvider } from '@quentin-sommer/react-useragent'
-import GameProvider from "../contexts/gameContext.tsx"
+import PointsProvider from '../contexts/points.tsx'
+import GameProvider from '../contexts/gameContext.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <UserAgentProvider ua={window.navigator.userAgent}>
       <GameProvider>
-        <App />
+        <PointsProvider>
+          <App />
+        </PointsProvider>
       </GameProvider>
     </UserAgentProvider>
   </React.StrictMode>,

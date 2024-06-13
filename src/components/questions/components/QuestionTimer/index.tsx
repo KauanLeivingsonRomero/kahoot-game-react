@@ -2,10 +2,12 @@ import { useContext, useEffect } from 'react';
 import './style.css'
 import { GameContext } from '../../../../../contexts/gameContext';
 import { questions } from '../../questions';
+import { PointsContext } from '../../../../../contexts/points';
 
 const QuestionTimer = () => {  
 
   const {time, setTime, currentQuestionIndex, setHandleResults, handleResults, setHandleGame, setCurrentQuestionIndex} = useContext(GameContext)
+  const {reset, setIsAnswered} = useContext(PointsContext)
 
   useEffect(() => {
     if (time === 0 && currentQuestionIndex + 1 < questions.length) {
@@ -18,6 +20,8 @@ const QuestionTimer = () => {
         setTime(questions[nextTimerIndex].timer); 
         setHandleGame(true)
         setHandleResults(false)
+        setIsAnswered(false)
+        reset()
       }, 2000)
     }
     if(time === 0 && questions.length -1){

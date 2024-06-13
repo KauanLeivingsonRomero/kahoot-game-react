@@ -12,28 +12,38 @@ export const PointsContext = createContext<PointsContextProps>({
   setYellowPoints: Object,
   totalPoints: 0,
   setTotalPoints: Object,
-  reset: Object,
+  isAnswered: false,
+  setIsAnswered: Object,
+  selectedColor: "",
+  setSelectedColor: Object,
+  reset: Function,
 });
 
 
 
-const GameProvider = ({ children }: PointsProviderProps) => {
-
+const PointsProvider = ({ children }: PointsProviderProps) => {
+  
   const [redPoints, setRedPoints] = useState(0);
   const [bluePoints, setBluePoints] = useState(0);
   const [yellowPoints, setYellowPoints] = useState(0);
   const [greenPoints, setGreenPoints] = useState(0);
   const [totalPoints, setTotalPoints] = useState(0);
+  const [isAnswered, setIsAnswered] = useState(false);
+  const [selectedColor, setSelectedColor] = useState("");
 
   const reset = () => {
-
+    setRedPoints(0)
+    setBluePoints(0)
+    setGreenPoints(0)
+    setYellowPoints(0)
+    setTotalPoints(0)
   }
 
   return (
-    <PointsContext.Provider value={{ redPoints, setRedPoints, bluePoints, setBluePoints, yellowPoints, setYellowPoints,greenPoints, setGreenPoints, reset, totalPoints, setTotalPoints }}>
+    <PointsContext.Provider value={{ redPoints, setRedPoints, bluePoints, setBluePoints, yellowPoints, setYellowPoints,greenPoints, setGreenPoints, reset, totalPoints, setTotalPoints, isAnswered, setIsAnswered, selectedColor, setSelectedColor}}>
       {children}
     </PointsContext.Provider>
   );
 };
 
-export default GameProvider;
+export default PointsProvider;

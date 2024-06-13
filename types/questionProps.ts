@@ -2,6 +2,6 @@ export interface QuestionProps {
   question: string;
   options?: { value: string, color: string}[];
   image: string;
-  onAnswer: (answer: string) => void;
+  onAnswer: (answer: string, color: string) => void;
   timer: number
 }
