@@ -1,20 +1,24 @@
 import { useContext } from 'react';
-import { GameContext } from '../../../contexts/gameContext';
 import "./style.css"
 import { questions } from '../questions/questions';
-import { PointsContext } from '../../../contexts/points';
+import { GameContext } from '../../contexts/gameContext';
+import { PointsContext } from '../../contexts/pointsContext';
+import { COLORS } from '../../colors';
 // import { COLORS } from '../../colors';
 
 const Results = () => {
 
   const {handleResults, currentQuestionIndex} = useContext(GameContext);
-  const {redPoints, bluePoints, yellowPoints, greenPoints} = useContext(PointsContext)
+  const { redPoints, bluePoints, yellowPoints, greenPoints} = useContext(PointsContext);
+
+
+
   const getPointsForOption = (color: string) => {
     switch(color) {
-      case '#e21b3b': return redPoints;
-      case '#44a2e4': return bluePoints;
-      case '#f1d14a': return yellowPoints;
-      case '#68c334': return greenPoints;
+      case COLORS.$red: return redPoints;
+      case  COLORS.$blue: return bluePoints;
+      case  COLORS.$yellow: return yellowPoints;
+      case  COLORS.$green: return greenPoints;
       default: return 0;
     }
   };

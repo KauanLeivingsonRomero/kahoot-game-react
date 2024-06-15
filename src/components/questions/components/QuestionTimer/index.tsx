@@ -1,8 +1,8 @@
 import { useContext, useEffect } from 'react';
 import './style.css'
-import { GameContext } from '../../../../../contexts/gameContext';
+import { GameContext } from '../../../../contexts/gameContext';
 import { questions } from '../../questions';
-import { PointsContext } from '../../../../../contexts/points';
+import { PointsContext } from '../../../../contexts/pointsContext';
 
 const QuestionTimer = () => {  
 
@@ -36,7 +36,7 @@ const QuestionTimer = () => {
 
   useEffect(() => {
     const timerId = setInterval(() => {
-      setTime((prevTime) => (prevTime > 0 ? prevTime - 1 : prevTime));
+      setTime((prevTime: number) => (prevTime > 0 ? prevTime - 1 : prevTime));
     }, 1000);
     return () => clearInterval(timerId);
   }, [currentQuestionIndex, setTime]);

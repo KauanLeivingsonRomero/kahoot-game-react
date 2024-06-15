@@ -5,8 +5,8 @@ import QuestionTimer from './components/QuestionTimer';
 import QuestionPoints from './components/QuestionPoints';
 import { BsFillTriangleFill, BsSquareFill , BsFillCircleFill , BsDiamondFill } from 'react-icons/bs';
 import { UserAgent } from '@quentin-sommer/react-useragent';
-import { QuestionProps } from './../../../types/questionProps';
-import { PointsContext } from '../../../contexts/points';
+import { QuestionProps } from './../../types/questionProps';
+import { PointsContext } from '../../contexts/pointsContext';
 
 const icons = [BsFillTriangleFill, BsSquareFill , BsFillCircleFill , BsDiamondFill]; 
 

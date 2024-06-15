@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import './style.css'
-import { PointsContext } from '../../../../../contexts/points';
+import { PointsContext } from '../../../../contexts/pointsContext';
 
 // import { Container } from './styles';
 

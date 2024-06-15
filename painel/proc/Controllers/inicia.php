@@ -1,5 +1,6 @@
 <?php
-
+    ini_set("display_errors", 1);
+    
     require './vendor/autoload.php';
 
     $options = array(
@@ -15,7 +16,7 @@
     );
 
     $data['message'] = 'Quiz iniciado';
-    $pusher->trigger('my-channel', 'my-event', $data);
+    $pusher->trigger('presence-client-channel', 'my-event', $data);
 
     header("Location: ../../subs.php");
 

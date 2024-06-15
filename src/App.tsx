@@ -8,7 +8,6 @@ import Game from './components/game';
 
 
 function App() {
-
   return (
     <>
       <UserAgent mobile tablet>

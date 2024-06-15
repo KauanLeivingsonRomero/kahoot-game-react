@@ -1,5 +1,6 @@
 <?php 
 require "suporte.php";
+require "../../cors.php";
 $exec   = new Processo();
 
 //verifica se tem retorno 

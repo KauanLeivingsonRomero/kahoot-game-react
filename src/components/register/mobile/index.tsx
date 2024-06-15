@@ -1,29 +1,52 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import 'animate.css';
-import { GameContext } from '../../../../contexts/gameContext';
+import { GameContext } from '../../../contexts/gameContext';
 import { Button, FloatingLabel, Form } from 'react-bootstrap';
 import "./style.css";
-
+import { PusherContext } from '../../../contexts/pusherContext';
+import axios from 'axios';
 
 const RegisterMobile = () => {
-  
-  const { handleRegister, setHandleRegister, setHandleQrcode } = useContext(GameContext);
-  const nextStep = () => {setHandleRegister(false);setHandleQrcode(true)}
+  const { handleRegister, setHandleRegister, setHandleQrcode, setHandlePresentation } = useContext(GameContext);
+  const { pusher, channel, setUserName, setUserEmail } = useContext(PusherContext);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+ 
 
-  return(
+  useEffect(() => {
+    if(channel && pusher){
+      channel.bind('my-event', () => {
+        setHandleQrcode(false)
+        setHandlePresentation(true)
+      })
+    }
+  }, [channel, pusher]);
+
+  const nextStep = () => {
+    setUserName(name);
+    setUserEmail(email);
+    setHandleRegister(false);
+    setHandleQrcode(true);
+    axios.post('http://localhost:8000/painel/proc/Controllers/registerUser.php', {
+      name: name,
+      email: email
+    } )
+  }
+
+  return (
     <>
       {handleRegister && 
-        <div style={{display: handleRegister ? "flex" : "none"}} className="register-container animate__animated animate__backInDown">
+        <div className="register-container animate__animated animate__backInDown">
           <h2 className='mb-5 fw-bold'>Kahoot Control-e</h2>
           <h4 className="text-black fw-bold">Participar do jogo</h4>
-          <Form className='form'>
+          <Form className='form' onSubmit={() => nextStep()}>
             <FloatingLabel controlId="floatingName" label="Seu primeiro nome" className="mb-3">
-              <Form.Control type="text" placeholder="Seu primeiro nome" name="name" />
+              <Form.Control type="text" placeholder="Seu primeiro nome" name="name" value={name} onChange={(e) => setName(e.target.value)}/>
             </FloatingLabel>
             <FloatingLabel controlId="floatingEmail" label="Seu email" className="mb-3">
-              <Form.Control type="Email" placeholder="Seu email" name="email" />
+              <Form.Control type="email" placeholder="Seu email" name="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
             </FloatingLabel>
-            <Button className="registerButton" type="button" onClick={nextStep}><h4>Ok, vamos lá!</h4></Button>
+            <Button className="registerButton" type="submit"><h4>Ok, vamos lá!</h4></Button>
           </Form>
         </div>
       }      
@@ -32,3 +55,7 @@ const RegisterMobile = () => {
 }
 
 export default RegisterMobile;
+function setHandlePresentation(arg0: boolean) {
+  throw new Error('Function not implemented.');
+}
+

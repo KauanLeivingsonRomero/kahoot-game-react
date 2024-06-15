@@ -1,7 +1,7 @@
 <footer class="fixed-bottom mb-4">
     <div class="container-fluid overflow-hidden">
         <div class="row gx-5">
-            <div class="col-12 col-md text-center"><a href="https://control-e.tv.br" target="_blank" rel="noopener noreferrer"><img src="imgs/control-logo.svg" alt="Logo control-e" class="img-fluid col-5 col-md-7 col-lg-3"></a></div>
+            <div class="col-12 col-md text-center"><a href="https://control-e.tv.br" target="_blank" rel="noopener noreferrer"><img src="painel/imgs/control-logo.svg" alt="Logo control-e" class="img-fluid col-5 col-md-7 col-lg-3"></a></div>
             <div class="col-12 col-md text-center my-3 my-md-0">
                 <p class="text-gray mb-0">Control-E ©<?= date("Y"); ?> | Todos os direitos reservados</p>
             </div>

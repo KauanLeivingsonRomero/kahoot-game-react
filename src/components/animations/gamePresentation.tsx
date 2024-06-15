@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import './styles.css'
-import { GameContext } from '../../../contexts/gameContext';
+import { GameContext } from '../../contexts/gameContext';
 import Countdown from '../countdown';
 
 const GamePresentation = () => {

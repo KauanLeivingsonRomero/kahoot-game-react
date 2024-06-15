@@ -9,7 +9,7 @@ export const questions = [
     ], 
     answer: 'Paris', 
     image: "https://res.cloudinary.com/projetos/image/upload/v1716425007/kahoot-control-e/assets/jogadores.png",
-    timer: 5
+    timer: 30
   },
   { 
     question: 'Qual é 2 + 2?', 

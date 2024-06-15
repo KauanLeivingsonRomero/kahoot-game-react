@@ -10,11 +10,10 @@ if(isset($_SESSION['id'])){
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="imgs/favicon.png">
+    <link rel="stylesheet" href="painel/css/style.css">
+    <link rel="icon" href="painel/imgs/favicon.png">
     <meta name="theme-color" content="#9E0CAB">
 
     <title>Painel - Plataforma Control-e</title>
@@ -23,11 +22,11 @@ if(isset($_SESSION['id'])){
     <div class="vh-100 d-flex flex-column align-items-center justify-content-center">
       <div class="col-11 col-md-6 col-lg-3">
         <div class="text-center">
-        <img src="https://res.cloudinary.com/control-e/image/upload/q_auto/f_auto/v1705335239/global/Logo_r6gjiy.png" alt="Logo" class="img-fluid">
+        <img src="https://res.cloudinary.com/projetos/image/upload/v1713975411/global-assets-control-e/Logo_r6gjiy_qvpfas.png" alt="Logo" class="img-fluid">
         <h4 class="fw-medium mt-4">Acesso ao painel</h4>
         </div>
 
-        <form action="proc/Controllers/verifica.php" method="post">
+        <form action="painel/proc/Controllers/verifica.php" method="post">
         <?php if(isset($_GET['msg'])){ echo '<h5 class="text-center text-purple fw-small">Dados não localizados.</h5>'; }?>
           <div class="form-floating mb-3">
             <input type="email" class="form-control purple-form" name="email" id="email" placeholder="E-mail" inputmode="email" required>

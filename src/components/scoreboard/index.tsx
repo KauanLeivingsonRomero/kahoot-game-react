@@ -2,12 +2,14 @@
 // import { Container } from './styles';
 
 import { useContext } from "react";
-import { PointsContext } from "../../../contexts/points";
 import { COLORS } from "../../colors";
 import './styles.css'
+import { PointsContext } from "../../contexts/pointsContext";
 
 const Scoreboard = () => {
-  const {handleScoreboard} = useContext(PointsContext)
+  
+  const { handleScoreboard} = useContext(PointsContext);
+
   return(
     <>
     {handleScoreboard && 

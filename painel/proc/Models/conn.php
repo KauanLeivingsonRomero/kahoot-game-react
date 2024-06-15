@@ -1,8 +1,8 @@
 <?php
-$server = "35.225.3.37"; // Indique o ip do servidor mysql
-$dbname= "kahoot"; // Indique o nome do banco de dados que ser� aberto
-$usuario="ricardo"; // Indique o nome do usu�rio que tem acesso
-$password="Fdjysq@2406"; // Indique a senha do usu�rio
+$server = "localhost"; // Indique o ip do servidor mysql
+$dbname= "kahoot-control-e-react"; // Indique o nome do banco de dados que ser� aberto
+$usuario="root"; // Indique o nome do usu�rio que tem acesso
+$password=""; // Indique a senha do usu�rio
 
 //1� passo - Conecta ao servidor MySQL
 Global $conn;
