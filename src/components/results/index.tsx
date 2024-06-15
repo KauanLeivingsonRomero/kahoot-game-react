@@ -39,7 +39,7 @@ const Results = () => {
                     <div className='pillar-map' key={index}>
                       {isCorrect && <span className="correct-mark icon">✔</span>}
                       <h1 className='pillar-text'>{points}</h1>
-                      <div className='pillar' style={{backgroundColor: option.color}}></div>
+                      <div className='pillar transition' style={{backgroundColor: option.color, height: points * 10}}></div>
                     </div>
                   );
                 })}

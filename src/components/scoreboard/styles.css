@@ -1,4 +1,6 @@
-.title{
+/* styles.css */
+
+.title {
   background-color: white;
   width: 100%;
   height: 75px;
@@ -9,13 +11,13 @@
   justify-content: center;
 }
 
-.results{
+.results {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.container-pillars{
+.container-pillars {
   width: 95vw;
   height: 50vw;
   padding: 10px;
@@ -25,38 +27,71 @@
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  gap: 10%;
+  gap: 5%;
 }
 
-.pillars-center{
+.pillars-center {
   display: flex;
   align-items: flex-end;
-  gap: 20%;
+  gap: 5%;
   justify-content: center;
 }
 
-.pillar-map{
+.pillar-map {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.pillar{
-  width: 60px;
+.pillar {
+  width: 10vw; /* Width of the pillars adjusted to be responsive */
+  max-width: 60px; /* Max width to ensure it doesn't get too wide on large screens */
   border-radius: 5px;
+  transition: height 0.3s ease;
 }
 
-.pillar-text{
+.pillar-text {
   text-align: center;
   color: white;
 }
 
-.icon{
+.icon {
   text-align: center;
 }
 
-.pillar-box-center{
+.pillar-box-center {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .pillar {
+    width: 15vw;
+    max-width: 40px;
+  }
+
+  .title {
+    font-size: 1.5em;
+  }
+
+  .container-pillars {
+    height: 60vw; /* Adjust height for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .pillar {
+    width: 20vw;
+    max-width: 30px;
+  }
+
+  .title {
+    font-size: 1.2em;
+  }
+
+  .container-pillars {
+    height: 70vw; /* Adjust height for smaller screens */
+  }
 }

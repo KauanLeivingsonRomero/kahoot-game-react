@@ -27,7 +27,6 @@ const RegisterDesktop = () => {
     setUserEmail("admin@admin.com");
     setHandleLobby(false);
     setHandleQrcode(true);
-    
   };
 
   return (

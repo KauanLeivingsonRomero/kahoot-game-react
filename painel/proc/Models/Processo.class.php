@@ -39,8 +39,8 @@ Class Processo extends ConexaoPdo
 
     public function getWinners()
     {  
-        $this->Query = "SELECT name FROM tb_points ";    
-        $this->Query.= "ORDER BY total_points DESC LIMIT 3";      
+        $this->Query = "SELECT name,points FROM tb_points ";    
+        $this->Query.= "ORDER BY points DESC LIMIT 3";      
         $this->ExecuteSQL($this->Query);
         return $this->ListarDadosAll();
     }

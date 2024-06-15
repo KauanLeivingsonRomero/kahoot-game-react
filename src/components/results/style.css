@@ -54,3 +54,7 @@
 .icon{
   text-align: center;
 }
+
+.transition{
+  transition: all ease 1s;
+}

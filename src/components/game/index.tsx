@@ -50,7 +50,6 @@ const Game = () => {
         email: userEmail,
       })
     }
-    console.log(rightAnswer)
   },[rightAnswer, userName, userEmail])
   
 
@@ -59,7 +58,6 @@ const Game = () => {
     
     if(answer === questions[currentQuestionIndex].answer){
       setRightAnswer((prevRightAnswer) => prevRightAnswer + 1)
-      console.log(rightAnswer)
     }
     
     switch(color) {

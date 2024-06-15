@@ -39,9 +39,6 @@ const PusherProvider = ({ children }: PusherProviderProps) => {
           },
         },
       });
-
-      Pusher.logToConsole = true;
-      console.log("ouvindo")
       
       pusherInstance.connection.bind('connected', () => {
         const channelInstance = pusherInstance.subscribe('presence-client-channel');
