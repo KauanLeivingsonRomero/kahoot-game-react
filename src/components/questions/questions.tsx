@@ -1,39 +1,63 @@
 export const questions = [
   { 
-    question: 'Qual é a capital da França?', 
+    question: 'Qual o minimo de jogadores no campo de futebol ?', 
     options: [
-      {value: 'Paris', color: '#e21b3b'}, 
-      {value: 'Londres', color: '#44a2e4'}, 
-      {value: 'Roma', color: '#f1d14a'}, 
-      {value: 'Berlim', color: '#68c334'}
+      {value: '1', color: '#e21b3b'}, 
+      {value: '12', color: '#44a2e4'}, 
+      {value: '26', color: '#f1d14a'}, 
+      {value: '7', color: '#68c334'}
     ], 
-    answer: 'Paris', 
+    answer: '7', 
     image: "https://res.cloudinary.com/projetos/image/upload/v1716425007/kahoot-control-e/assets/jogadores.png",
-    timer: 30
+    timer: 10
   },
   { 
-    question: 'Qual é 2 + 2?', 
+    question: 'Qual o filosofo que disse "Penso logo existo" ?', 
     options: [
-      {value: '3', color: '#e21b3b'}, 
-      {value: '4', color: '#44a2e4'}, 
-      {value: '5', color: '#f1d14a'}, 
-      {value: '6', color: '#68c334'}
+      {value: 'Platao', color: '#e21b3b'}, 
+      {value: 'Socrates', color: '#44a2e4'}, 
+      {value: 'Aristoteles', color: '#f1d14a'}, 
+      {value: 'Descartes', color: '#68c334'}
     ], 
-    answer: '4',
+    answer: 'Descartes',
     image: "https://res.cloudinary.com/projetos/image/upload/v1716424727/kahoot-control-e/assets/filosofos.png",
-    timer: 5
+    timer: 10
   },
   { 
-    question: 'Qual é a capital da França?', 
+    question: 'Qual os feriados nesse mes', 
     options: [
-      {value: 'Paris', color: '#e21b3b'}, 
-      {value: 'Londres', color: '#44a2e4'}, 
-      {value: 'Roma', color: '#f1d14a'}, 
-      {value: 'Berlim', color: '#68c334'}
+      {value: 'sla mano', color: '#e21b3b'}, 
+      {value: 'deve ter algum', color: '#44a2e4'}, 
+      {value: 've no calendario', color: '#f1d14a'}, 
+      {value: 'nao sei', color: '#68c334'}
     ], 
-    answer: 'Paris', 
-    image: "https://res.cloudinary.com/projetos/image/upload/v1716425007/kahoot-control-e/assets/jogadores.png",
-    timer: 5
+    answer: 've no calendario', 
+    image: "https://res.cloudinary.com/projetos/image/upload/v1716425442/kahoot-control-e/assets/calendary.png",
+    timer: 10
+  },
+  { 
+    question: 'Qual o personagem que anda com uma perna só ?', 
+    options: [
+      {value: 'Saci', color: '#e21b3b'}, 
+      {value: 'Boto-cor-de-rosa', color: '#44a2e4'}, 
+      {value: 'Boitata', color: '#f1d14a'}, 
+      {value: 'curupira', color: '#68c334'}
+    ], 
+    answer: 'Saci', 
+    image: "https://res.cloudinary.com/projetos/image/upload/v1716426362/kahoot-control-e/assets/lendas.png",
+    timer: 10
+  },
+  { 
+    question: 'Qual é a montanha?', 
+    options: [
+      {value: 'parana', color: '#e21b3b'}, 
+      {value: 'Monte videu', color: '#44a2e4'}, 
+      {value: 'Pao de acucar', color: '#f1d14a'}, 
+      {value: 'Fuji', color: '#68c334'}
+    ], 
+    answer: 'Fuji', 
+    image: "https://res.cloudinary.com/projetos/image/upload/v1716427689/kahoot-control-e/assets/montanha.png",
+    timer: 10
   },
   
 ]

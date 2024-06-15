@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { GameContext } from '../../contexts/gameContext';
 import Question from '../questions';
 import { questions } from '../questions/questions';
@@ -13,10 +13,11 @@ import axios from 'axios';
 const Game = () => {
   const { handleGame, currentQuestionIndex, handleResults } = useContext(GameContext);
   const { setRedPoints, setBluePoints, setYellowPoints, setGreenPoints, setTotalPoints, setIsAnswered, setSelectedColor, handleScoreboard} = useContext(PointsContext);
-  const {channel} = useContext(PusherContext);
+  const {channel, userEmail, userName} = useContext(PusherContext);
+  const [rightAnswer, setRightAnswer] = useState<number>(0);
 
   useEffect(() => {
-    channel?.bind("client-answer", (data: {answer: string, color: string}, me: string) => {
+    channel?.bind("client-answer", (data: {answer: string, color: string}) => {
       switch(data.color) {
         case COLORS.$red:
           setRedPoints((redPoints) => redPoints + 1);
@@ -40,10 +41,27 @@ const Game = () => {
       }
     })
   }, [channel])
+
+  useEffect(() => {
+    if(rightAnswer > 0){
+      axios.post("http://localhost:8000/painel/proc/Controllers/registerAnswer.php", {
+        points:  rightAnswer,
+        name: userName,
+        email: userEmail,
+      })
+    }
+    console.log(rightAnswer)
+  },[rightAnswer, userName, userEmail])
   
 
   const handleAnswer = (answer: string, color: string) => {
     channel?.trigger("client-answer", {answer: answer, color: color})
+    
+    if(answer === questions[currentQuestionIndex].answer){
+      setRightAnswer((prevRightAnswer) => prevRightAnswer + 1)
+      console.log(rightAnswer)
+    }
+    
     switch(color) {
       case COLORS.$red:
         setRedPoints((redPoints) => redPoints + 1);
@@ -72,7 +90,7 @@ const Game = () => {
       default:
         break;
     }
-    axios.post("http://localhost:5173/painel/")
+    
   };
 
   

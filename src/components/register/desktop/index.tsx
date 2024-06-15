@@ -4,11 +4,10 @@ import { Button } from 'react-bootstrap';
 import "./style.css";
 import { GameContext } from '../../../contexts/gameContext';
 import { PusherContext } from './../../../contexts/pusherContext';
-import axios from 'axios';
 
 const RegisterDesktop = () => {
   const { handleLobby, setHandleLobby, setHandleQrcode, setHandlePresentation } = useContext(GameContext);
-  const { pusher, channel, userName, setUserName, userEmail, setUserEmail } = useContext(PusherContext);
+  const { pusher, channel, setUserName, setUserEmail } = useContext(PusherContext);
   
   
 
@@ -26,8 +25,8 @@ const RegisterDesktop = () => {
   const nextStep = () => {
     setUserName("admin");
     setUserEmail("admin@admin.com");
-    // setHandleLobby(false);
-    // setHandleQrcode(true);
+    setHandleLobby(false);
+    setHandleQrcode(true);
     
   };
 

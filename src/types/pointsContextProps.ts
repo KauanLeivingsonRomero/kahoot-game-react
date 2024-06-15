@@ -11,6 +11,8 @@ export interface PointsContextProps{
   setGreenPoints: Dispatch<SetStateAction<number>>
   totalPoints: number
   setTotalPoints: Dispatch<SetStateAction<number>>
+  rightAnswers: number
+  setRightAnswers: Dispatch<SetStateAction<number>>
   isAnswered: boolean
   setIsAnswered: Dispatch<SetStateAction<boolean>>
   selectedColor: string
