@@ -11,26 +11,25 @@ const Scoreboard = () => {
   const { handleResults } = useContext(GameContext);
   const [data, setData] = useState<any>([]);
   const [loading, setLoading] = useState(true);
-  const [maxPoints, setMaxPoints] = useState(1); // Default to 1 to avoid division by zero
 
   useEffect(() => {
     if(handleResults === false){
       axios.get("http://localhost:8000/painel/proc/Controllers/getWinners.php")
         .then((response) => {
           setData(response.data);
-          setLoading(false); // Data has been loaded
-          const pointsArray = response.data.map((winner: any[]) => winner[1]);
-          setMaxPoints(Math.max(...pointsArray)); // Set the maximum points for scaling
+          setLoading(false);
+          
+          
         })
         .catch((error) => {
           console.error('Error fetching winners:', error);
-          setLoading(false); // Set loading to false even if there's an error
+          setLoading(false)
         });
     }
   }, [handleResults]);
 
   if (loading) {
-    return <div>Loading...</div>; // Show a loading message or spinner
+    return <div>Loading...</div>;
   }
 
   return(

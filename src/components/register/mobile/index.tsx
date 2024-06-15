@@ -55,7 +55,4 @@ const RegisterMobile = () => {
 }
 
 export default RegisterMobile;
-function setHandlePresentation(arg0: boolean) {
-  throw new Error('Function not implemented.');
-}
 
