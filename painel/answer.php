@@ -1,8 +1,11 @@
 <?php
 
   require './proc/Controllers/vendor/autoload.php';
+  
+  $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+  $dotenv->load();
 
-  $pusher = new Pusher\Pusher('f5c336861080be6d8224','1561b20a38c9f4af2033','1805846',array('cluster'=>'sa1','useTLS'=> true));
+  $pusher = new Pusher\Pusher($_ENV['REACT_APP_PUSHER_KEY'],$_ENV['REACT_APP_PUSHER_SECRET'],$_ENV['REACT_APP_PUSHER_APP_ID'],array('cluster'=>$_ENV['REACT_APP_PUSHER_CLUSTER'],'useTLS'=> true));
 
   
 

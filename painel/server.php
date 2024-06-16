@@ -1,7 +1,12 @@
 <?php
 require './proc/Controllers/vendor/autoload.php';
 require './cors.php';
-$pusher = new Pusher\Pusher('d3e1dcb15e931f6aff36','578f1ff312c9b5d787b1','1805846',array('cluster' => 'sa1','useTLS'=> true));
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+$pusher = new Pusher\Pusher($_ENV['PUSHER_KEY'],$_ENV['PUSHER_SECRET'],$_ENV['PUSHER_APP_ID'],array('cluster'=>$_ENV['PUSHER_CLUSTER'],'useTLS'=> true));
+
 
 // Check if decoding was successful
 if ($_POST !== null && $_POST['name'] !== null || '' && $_POST['email'] !== null || '') {

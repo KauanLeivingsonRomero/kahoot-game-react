@@ -44,7 +44,7 @@ const Game = () => {
 
   useEffect(() => {
     if(rightAnswer > 0){
-      axios.post("http://localhost:8000/painel/proc/Controllers/registerAnswer.php", {
+      axios.post(`${import.meta.env.VITE_API_URL}/painel/proc/Controllers/registerAnswer.php`, {
         points:  rightAnswer,
         name: userName,
         email: userEmail,

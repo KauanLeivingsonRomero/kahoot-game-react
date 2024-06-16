@@ -23,12 +23,12 @@ const PusherProvider = ({ children }: PusherProviderProps) => {
   const [channel, setChannel] = useState<any>(null);
   const [userName, setUserName] = useState('');
   const [userEmail, setUserEmail] = useState('');
-
+  
   useEffect(() => {
     if (userName && userEmail) {
-      const pusherInstance = new Pusher('d3e1dcb15e931f6aff36', {
-        cluster: 'sa1',
-        authEndpoint: 'http://localhost:8000/painel/server.php',
+      const pusherInstance = new Pusher(`${import.meta.env.VITE_PUSHER_KEY}`, {
+        cluster: `${import.meta.env.VITE_PUSHER_CLUSTER}`,
+        authEndpoint: `${import.meta.env.VITE_API_URL}/painel/server.php`,
         auth: {
           headers: {
             'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ const PusherProvider = ({ children }: PusherProviderProps) => {
           },
         },
       });
-      
+      console.log(import.meta.env.VITE_PUSHER_CLUSTER)
       pusherInstance.connection.bind('connected', () => {
         const channelInstance = pusherInstance.subscribe('presence-client-channel');
         setChannel(channelInstance);
@@ -47,7 +47,7 @@ const PusherProvider = ({ children }: PusherProviderProps) => {
       
       setPusher(pusherInstance);
       
-      
+      Pusher.logToConsole = true;
 
       return () => {
         pusherInstance.disconnect();

@@ -1,19 +1,22 @@
 <?php
+    
     ini_set("display_errors", 1);
     
     require './vendor/autoload.php';
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+    $dotenv->load();
 
     $options = array(
-    'cluster' => 'sa1',
+    'cluster' => $_ENV['PUSHER_CLUSTER'],
     'useTLS' => true
     );
 
     $pusher = new Pusher\Pusher(
-    'd3e1dcb15e931f6aff36',
-    '578f1ff312c9b5d787b1',
-    '1805846',
-    $options
-    );
+        $_ENV['PUSHER_KEY'],
+        $_ENV['PUSHER_SECRET'],
+        $_ENV['PUSHER_APP_ID'],
+        $options
+    );  
 
     $data['message'] = 'Quiz iniciado';
     $pusher->trigger('presence-client-channel', 'my-event', $data);

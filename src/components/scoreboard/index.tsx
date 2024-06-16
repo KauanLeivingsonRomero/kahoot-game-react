@@ -14,7 +14,7 @@ const Scoreboard = () => {
 
   useEffect(() => {
     if(handleResults === false){
-      axios.get("http://localhost:8000/painel/proc/Controllers/getWinners.php")
+      axios.get(`${import.meta.env.VITE_API_URL}/painel/proc/Controllers/getWinners.php`)
         .then((response) => {
           setData(response.data);
           setLoading(false);
