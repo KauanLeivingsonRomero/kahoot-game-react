@@ -3,11 +3,12 @@ import "./style.css"
 import { questions } from '../questions/questions';
 import { GameContext } from '../../contexts/gameContext';
 import { PointsContext } from '../../contexts/pointsContext';
+import  {BsCheck} from 'react-icons/bs';
 import { COLORS } from '../../colors';
-// import { COLORS } from '../../colors';
+const icons = [BsCheck];
 
 const Results = () => {
-
+  
   const {handleResults, currentQuestionIndex} = useContext(GameContext);
   const { redPoints, bluePoints, yellowPoints, greenPoints} = useContext(PointsContext);
 
@@ -22,7 +23,7 @@ const Results = () => {
       default: return 0;
     }
   };
-
+  const Icon = icons[0]
   return(
     <>
       {handleResults && 
@@ -37,7 +38,7 @@ const Results = () => {
 
                   return (
                     <div className='pillar-map' key={index}>
-                      {isCorrect && <span className="correct-mark icon">✔</span>}
+                      {isCorrect && <Icon  size={60} color='white'/>}
                       <h1 className='pillar-text'>{points}</h1>
                       <div className='pillar transition' style={{backgroundColor: option.color, height: points * 10}}></div>
                     </div>

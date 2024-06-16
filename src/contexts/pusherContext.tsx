@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from 'react';
 import { PusherContextProps, PusherProviderProps } from '../types/pusherContextProps';
-import Pusher from 'pusher-js';
+import Pusher, { Channel } from 'pusher-js';
+import UserList from '../components/userList';
 
 
 export const PusherContext = createContext<PusherContextProps>({
@@ -19,8 +20,8 @@ export const PusherContext = createContext<PusherContextProps>({
 
 const PusherProvider = ({ children }: PusherProviderProps) => {
 
-  const [pusher, setPusher] = useState<any>(null);
-  const [channel, setChannel] = useState<any>(null);
+  const [pusher, setPusher] = useState<Pusher | any>(null);
+  const [channel, setChannel] = useState<Channel | any>();
   const [userName, setUserName] = useState('');
   const [userEmail, setUserEmail] = useState('');
   
@@ -39,22 +40,22 @@ const PusherProvider = ({ children }: PusherProviderProps) => {
           },
         },
       });
-      console.log(import.meta.env.VITE_PUSHER_CLUSTER)
       pusherInstance.connection.bind('connected', () => {
-        const channelInstance = pusherInstance.subscribe('presence-client-channel');
+        const channelInstance = pusherInstance.subscribe('presence-client-channel');                
         setChannel(channelInstance);
       })     
       
       setPusher(pusherInstance);
       
+      
       Pusher.logToConsole = true;
-
+      
       return () => {
         pusherInstance.disconnect();
       };
     }
   }, [userName, userEmail]);
-
+  
   return (
     <PusherContext.Provider value={{pusher, setPusher, channel, setChannel, userName, setUserName, userEmail, setUserEmail}}>
       {children}

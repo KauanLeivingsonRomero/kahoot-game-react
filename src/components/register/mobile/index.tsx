@@ -27,7 +27,7 @@ const RegisterMobile = () => {
     setUserEmail(email);
     setHandleRegister(false);
     setHandleQrcode(true);
-    axios.post(`${import.meta.env.REACT_APP_API_URL}/painel/proc/Controllers/registerUser.php`, {
+    axios.post(`${import.meta.env.VITE_API_URL}/painel/proc/Controllers/registerUser.php`, {
       name: name,
       email: email
     } )

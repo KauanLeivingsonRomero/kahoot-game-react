@@ -1,12 +1,12 @@
-import Pusher, { Channel } from "pusher-js";
 import { ReactNode, SetStateAction } from "react"
+import * as PusherTypes from 'pusher-js';
 
 export interface PusherContextProps{
   
-  pusher: Pusher | null;
-  setPusher: React.Dispatch<SetStateAction<Pusher | null>>;
-  channel: Channel | null;
-  setChannel: React.Dispatch<SetStateAction<Pusher | null>>;
+  pusher: PusherTypes.default | null;
+  setPusher: React.Dispatch<SetStateAction<PusherTypes.default>> | null;
+  channel: PusherTypes.Channel | null;
+  setChannel: React.Dispatch<SetStateAction<PusherTypes.Channel>> | null;
   userName: string;
   setUserName: React.Dispatch<SetStateAction<string>>;
   userEmail: string;
