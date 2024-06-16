@@ -1,7 +1,6 @@
 import { createContext, useEffect, useState } from 'react';
 import { PusherContextProps, PusherProviderProps } from '../types/pusherContextProps';
 import Pusher, { Channel } from 'pusher-js';
-import UserList from '../components/userList';
 
 
 export const PusherContext = createContext<PusherContextProps>({
@@ -46,10 +45,7 @@ const PusherProvider = ({ children }: PusherProviderProps) => {
       })     
       
       setPusher(pusherInstance);
-      
-      
-      Pusher.logToConsole = true;
-      
+            
       return () => {
         pusherInstance.disconnect();
       };
