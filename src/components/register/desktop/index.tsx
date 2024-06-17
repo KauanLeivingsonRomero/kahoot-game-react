@@ -17,6 +17,7 @@ const RegisterDesktop = () => {
         setHandlePresentation(true)
         setHandleQrcode(false)
       })
+      console.log(channel.bind("my-event", () => {console.log('binding')}))
     }
 
     

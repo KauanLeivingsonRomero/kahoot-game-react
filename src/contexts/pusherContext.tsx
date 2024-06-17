@@ -45,6 +45,8 @@ const PusherProvider = ({ children }: PusherProviderProps) => {
       })     
       
       setPusher(pusherInstance);
+
+      Pusher.logToConsole = true;
             
       return () => {
         pusherInstance.disconnect();
