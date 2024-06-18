@@ -24,14 +24,14 @@ export const questions = [
     timer: 10
   },
   { 
-    question: 'Qual os feriados nesse mes', 
+    question: 'Quantos dias tem fevereiro em ano bissexto ?', 
     options: [
-      {value: 'sla mano', color: '#e21b3b'}, 
-      {value: 'deve ter algum', color: '#44a2e4'}, 
-      {value: 've no calendario', color: '#f1d14a'}, 
-      {value: 'nao sei', color: '#68c334'}
+      {value: '30', color: '#e21b3b'}, 
+      {value: '31', color: '#44a2e4'}, 
+      {value: '28', color: '#f1d14a'}, 
+      {value: '29', color: '#68c334'}
     ], 
-    answer: 've no calendario', 
+    answer: '29', 
     image: "https://res.cloudinary.com/projetos/image/upload/v1716425442/kahoot-control-e/assets/calendary.png",
     timer: 10
   },
@@ -48,7 +48,7 @@ export const questions = [
     timer: 10
   },
   { 
-    question: 'Qual é a montanha?', 
+    question: 'Qual é a montanha mais alta do Brasil ?', 
     options: [
       {value: 'parana', color: '#e21b3b'}, 
       {value: 'Monte videu', color: '#44a2e4'}, 
