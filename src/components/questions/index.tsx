@@ -39,7 +39,7 @@ const Question: React.FC<QuestionProps> = ({ question, options, onAnswer, image 
       </div>
       </UserAgent>
 
-      <UserAgent mobile>
+      <UserAgent mobile ios tablet>
         <div className='content mt-4'>
           <QuestionTimer />
           <QuestionPoints />

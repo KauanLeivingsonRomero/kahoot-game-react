@@ -10,7 +10,7 @@ import Game from './components/game';
 function App() {
   return (
     <>
-      <UserAgent mobile tablet>
+      <UserAgent mobile tablet ios>
         <RegisterMobile/>
         <QrcodeMobile />
         <GamePresentation />
