@@ -7,21 +7,20 @@ import { PusherContext } from './../../../contexts/pusherContext';
 
 const RegisterDesktop = () => {
   const { handleLobby, setHandleLobby, setHandleQrcode, setHandlePresentation } = useContext(GameContext);
-  const { pusher, channel, setUserName, setUserEmail } = useContext(PusherContext);
+  const { channel, setUserName, setUserEmail } = useContext(PusherContext);
   
   
 
   useEffect(() => {
-    if(channel && pusher){
-      channel.bind('my-event', () => {
-        setHandlePresentation(true)
-        setHandleQrcode(false)
-      })
-      console.log(channel.bind("my-event", () => {console.log('binding')}))
+    if(channel){
+      channel?.bind('my-event', () => {
+      setHandlePresentation(true)
+      setHandleQrcode(false)
+      });
     }
-
     
-  }, [channel, pusher]);
+    
+  }, [channel, setHandlePresentation, setHandleQrcode]);
 
   const nextStep = () => {
     setUserName("admin");

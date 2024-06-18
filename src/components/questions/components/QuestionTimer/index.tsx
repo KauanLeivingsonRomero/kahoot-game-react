@@ -30,6 +30,7 @@ const QuestionTimer = () => {
       setTimeout(() => {
         setHandleResults(false)
         setHandleScoreboard(true)
+        
       }, 3000)
     }
   }, [currentQuestionIndex, handleResults, setCurrentQuestionIndex, setHandleGame, setHandleResults, setTime, time, reset, setIsAnswered]);

@@ -40,7 +40,7 @@ const PusherProvider = ({ children }: PusherProviderProps) => {
         },
       });
       pusherInstance.connection.bind('connected', () => {
-        const channelInstance = pusherInstance.subscribe('presence-client-channel');                
+        const channelInstance = pusherInstance.subscribe('presence-client-channel');
         setChannel(channelInstance);
       })     
       

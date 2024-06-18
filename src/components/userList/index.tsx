@@ -27,35 +27,29 @@ const UserList = () => {
     };
 
     channel?.bind('pusher:member_added', (member: {id: string}) => {
+      console.log("changing channel state")
       addMemberToUserList(member.id);
     });
 
     channel?.bind('pusher:member_removed', (member: {id: string}) => {
       removeMemberFromUserList(member.id);
     });
-
     return () => {
-      channel?.unbind_all();
-    };
+      channel?.unbind('pusher:member_added')
+      channel?.unbind('pusher:member_removed')
+      channel?.unbind('pusher:subscription_succeeded')
+    }
   }, [channel, users, setUsers]);
   return(
     <div id="user_list" className="names">
       {users.map((user: {id: string, color: string}) => (
-        
         <>
-        {user.id != "admin" ? 
-        <div
-          className="animate__animated animate__bounceIn div-names"
-          key={user.id}
-          id={`user_${user.id}`}          
-        >
-          {user.id }
-        </div> : 
-        null
-        }
-       
-        </>
-        
+          {user.id != "admin" &&
+            <div className="animate__animated animate__bounceIn div-names" key={user.id} id={`user_${user.id}`}>
+              {user.id }
+            </div> 
+          }
+        </>        
       ))}
     </div>
   );

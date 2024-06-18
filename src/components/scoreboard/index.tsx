@@ -19,7 +19,6 @@ const Scoreboard = () => {
           setData(response.data);
           setLoading(false);
           
-          
         })
         .catch((error) => {
           console.error('Error fetching winners:', error);
@@ -34,24 +33,24 @@ const Scoreboard = () => {
 
   return(
     <>
-    {handleScoreboard && data.length > 0 &&
+    {handleScoreboard &&
       <div className='container-fluid p-0 results'>
         <h1 className='title'>Vencedores</h1>
         <div className='container-pillars'>
           <div className='pillars-center'>
             <div className='pillar-map'>
-              <h3 className='pillar-text'>{data[1].name}</h3>
-              <h5 className='pillar-text'>{data[1].points}</h5>
+              <h3 className='pillar-text'>{data.length >= 2 ? data[1].name : ""}</h3>
+              <h5 className='pillar-text'>{data.length >= 2 ? data[1].points : ""}</h5>
               <div className='pillar' style={{backgroundColor: COLORS.$silver, height: 85}}></div>
             </div>
             <div className='pillar-map'>
-              <h3 className='pillar-text'>{data[0].name}</h3>
-              <h5 className='pillar-text'>{data[0].points}</h5>
+              <h3 className='pillar-text'>{data.length >= 1 ? data[0].name : ""}</h3>
+              <h5 className='pillar-text'>{data.length >= 1 ? data[0].points : ""}</h5>
               <div className='pillar' style={{backgroundColor: COLORS.$gold, height: 150}}></div>
             </div>
             <div className='pillar-map'>
-              <h3 className='pillar-text'>{data[2].name}</h3>
-              <h5 className='pillar-text'>{data[2].points}</h5>
+              <h3 className='pillar-text'>{data.length >= 3 ? data[2].name : ""}</h3>
+              <h5 className='pillar-text'>{data.length >= 3 ? data[2].points : ""}</h5>
               <div className='pillar' style={{backgroundColor: COLORS.$bronze, height: 50}}></div>
             </div>
           </div>
